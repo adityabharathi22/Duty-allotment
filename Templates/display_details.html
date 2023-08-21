@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Staff Details</title>
+    <style>
+        /* Set font styles for the whole page */
+        body {
+          font-family: Arial, sans-serif;
+          font-size: 16px;
+          line-height: 1.5;
+        }
+
+        /* Style the table headers */
+        th {
+          background-color: #f2f2f2;
+          font-weight: bold;
+          padding: 10px;
+          text-align: left;
+        }
+
+        /* Style the table cells */
+        td {
+          border: 1px solid #ddd;
+          padding: 10px;
+        }
+
+        /* Add hover effect to table rows */
+        tr:hover {
+          background-color: #f5f5f5;
+        }
+
+
+
+        /* Style the page heading */
+        h1 {
+          text-align: center;
+          font-size: 36px;
+          font-weight: bold;
+          margin-bottom: 30px;
+          text-transform: uppercase;
+          letter-spacing: 2px;
+          color: #333;
+        }
+
+        .wrapper {
+          position: absolute;
+          top: 0;
+          right: 0;
+          padding: 20px;
+          background-color: rgba(255, 255, 255, 0.8);
+          border-radius: 0 0 10px 0;
+          box-shadow: -5px 5px 10px rgba(0, 0, 0, 0.2);
+          color: #333333;
+          font-weight: bold;
+          text-align: right;
+          z-index: 1;
+        }
+
+        div.fixed {
+          position: fixed;
+          bottom: 0;
+          right: 0;
+          width: 300px;
+
+        }
+
+        a {
+        font-family: Arial, sans-serif;
+        font-size: 16px;
+        color: #333;
+        text-decoration: none;
+        border-bottom: 2px solid transparent;
+        transition: border-color 0.2s ease-in-out;
+        }
+
+          a:hover {
+            border-bottom: 2px solid #333;
+          }
+
+          a:focus {
+            outline: none;
+          }
+
+          a[target="_blank"] {
+            margin-right: 50px;
+            padding: 10px 20px;
+            border-radius: 5px;
+            background-color: #333;
+            color: #fff;
+            transition: background-color 0.2s ease-in-out;
+          }
+
+          a[target="_blank"]:hover {
+            background-color: #555;
+          }
+
+          .tot_details {
+          position: absolute;
+          top: 0;
+          left: 0;
+          padding: 20px;
+          background-color: rgba(255, 255, 255, 0.8);
+          border-radius: 0 0 5px 0;
+          box-shadow: -5px 5px 10px rgba(0, 0, 0, 0.2);
+          color: #333333;
+          font-weight: bold;
+          text-align: right;
+          z-index: 1;
+        }
+    </style>
+</head>
+<body>
+    <h1>Staff Details</h1><br>
+    <div class="staff_details">
+        <table>
+            <th>Staff ID</th>
+            <th>Name</th>
+            <th>Occupation</th>
+            <th>Department</th>
+            <th>Date of Duty</th>
+            <th>Forenoon Session</th>
+            <th>Afternoon Session</th>
+            <th>Phone number</th>
+            <th>Email id</th>
+
+            {% for row in data %}
+            <tr>
+                  {% for cell in row %}
+                  <td><b>{{ cell }}</b></td>
+                  {% endfor %}
+            </tr>
+            {% endfor %}
+        </table>
+    </div>
+
+
+    <div class="wrapper">
+      College Selected: {{ tot_lst[3] }} <br>
+      Date Selected: {{ date_info }}
+    </div>
+
+    <div class="tot_details">
+        Total Forenoon Session Duties: {{ tot_lst[0] }}<br>
+        Total Afternoon Session Duties: {{ tot_lst[1] }}<br>
+        Total Duties: {{ tot_lst[2] }}<br>
+
+    </div>
+
+    <div class="fixed">
+        <a href="http://127.0.0.1:5000/view_print_data" target="_blank" style="float: bottom; margin-left: auto;">Click to view as pdf and print</a>
+    </div>
+
+
+</body>
+</html>

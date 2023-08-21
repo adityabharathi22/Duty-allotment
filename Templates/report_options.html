@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style type="text/css">
+        body {
+          background-color: #f8f8f8;
+          font-family: Arial, sans-serif;
+          text-align: center;
+        }
+
+        body:before{
+          content: 'Created by B. Aditya Bharathi';
+          position: fixed;
+          top: 20;
+          bottom: 0;
+          left: 3;
+          right: 0;
+          z-index: -1;
+
+          color: #001f3f;
+          font-size: 40px;
+          font-weight: 5000px;
+          display: grid;
+          justify-content: center;
+          align-content: center;
+          opacity: 0.5;
+        }
+
+        form {
+            background-color: #ffffff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0px 0px 10px #333333;
+            margin: 50px auto;
+            width: 50%;
+        }
+
+        form input[type="submit"] {
+            background-color: #4CAF50;
+            color: white;
+            padding: 20px 30px;
+            border-radius: 5px;
+            border: none;
+            cursor: pointer;
+        }
+
+        form input[type="submit"]:hover {
+            background-color: #3e8e41;
+        }
+
+        a.button {
+          display: inline-block;
+          background-color: #555;
+          color: #fff;
+          padding: 20px 30px;
+          border-radius: 5px;
+          text-decoration: none;
+          font-size: 18px;
+          transition: all 0.3s ease-in-out;
+        }
+
+        a.button:hover {
+          background-color: #333;
+        }
+    </style>
+</head>
+<body>
+
+    <form action="http://127.0.0.1:5000/gen_report" method="GET">
+        <input type="submit" value="Generate duty alloted by specific Dates" name="op_dates" class="inp"><br><br><br>
+        <input type="submit" value="Generate duty alloted by specfic session" name="op_sess" class="inp"><br><br><br>
+        <input type="submit" value="Generate duty to individual staffs" name="op_staffs" class="inp"><br><br><br>
+
+    </form>
+
+    <a href="http://127.0.0.1:5000/main_page" class="button">Home Page</a>
+</body>
+</html>

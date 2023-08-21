@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>College Accounting</title>
+    <style>
+        body {
+            background-color: #f0f0f0;
+            font-family: Arial, sans-serif;
+        }
+        h1 {
+            text-align: center;
+            position: absolute;
+            top: 0;
+            left: 50%;
+            transform: translate(-50%, 0);
+        }
+
+        h2 {
+            text-align: center;
+            position: absolute;
+            top: 1;
+            left: 50%;
+            transform: translate(-50%, 0);
+        }
+
+        #upload-form {
+            background-color: #ffffff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0px 0px 10px #333333;
+            margin: 50px auto;
+            width: 50%;
+        }
+
+        #upload-form input[type="file"] {
+            padding: 10px;
+            border-radius: 5px;
+            border: none;
+            margin-bottom: 20px;
+        }
+
+        #upload-form input[type="submit"] {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 20px;
+            border-radius: 5px;
+            border: none;
+            cursor: pointer;
+        }
+
+        #upload-form input[type="submit"]:hover {
+            background-color: #3e8e41;
+        }
+
+        form {
+            background-color: #ffffff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0px 0px 10px #333333;
+            margin: 50px auto;
+            width: 50%;
+        }
+
+        form input[type="text"] {
+            padding: 10px;
+            border-radius: 5px;
+            border: none;
+            margin-bottom: 20px;
+        }
+
+        form input[type="submit"] {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 20px;
+            border-radius: 5px;
+            border: none;
+            cursor: pointer;
+        }
+
+        form input[type="submit"]:hover {
+            background-color: #3e8e41;
+        }
+
+        .logo {
+            position: absolute;
+            top: 0;
+            width: 130px;
+            height: 130px;
+          }
+
+        .left-logo {
+            left: 40;
+        }
+
+        .wrapper {
+          position: absolute;
+          top: 0;
+          right: 0;
+          padding: 20px;
+          background-color: rgba(255, 255, 255, 0.8);
+          border-radius: 0 0 10px 0;
+          box-shadow: -5px 5px 10px rgba(0, 0, 0, 0.2);
+          color: #333333;
+          font-weight: bold;
+          text-align: right;
+          z-index: 1;
+        }
+
+    </style>
+
+</head>
+<body>
+    <h1>Duty Allotment</h1><br><br>
+    <h2>Upload your csv file and enter the session count</h2><br>
+    <img src="https://images.shiksha.com/mediadata/images/1618803747phpaekAq1.jpeg" class="logo left-logo">
+
+    <form id="upload-form" method="POST" action="http://127.0.0.1:5000/upload" enctype = "multipart/form-data">
+        <input type="file" accept="image/*" name="file" multiple/>
+        <input type="submit" value="submit" name="file_upload"><br><br><br>
+    </form>
+    <form method="POST" action="http://127.0.0.1:5000/home" enctype = "multipart/form-data">
+        <label>Enter number of staffs to be alloted in Forenoon(FN) and Afternoon(AN) session</label><br><br>
+
+        <div class="Exam_Dates">
+            <table>
+                <th> </th>
+                <th>Confirm: </th>
+                <th>Total Sessions:</th>
+
+                {% for row in date %}
+                <tr>
+                  <td>
+                      {{ row }}=> FN:<input type="number" onblur="add_sessions()" name="FN" id='FN' min="1">
+                                AN:<input type="number" onblur="add_sessions()" name="AN" id='AN' min="0">
+                                <input type="checkbox" name="cb"><br>
+                  </td>
+                    <p id="sum"> </p>
+
+                </tr>
+                {% endfor %}
+            </table>
+        </div>
+
+        <input type="submit" value="Allot duty" name="allot_duty">
+    </form>
+
+    <a href="http://127.0.0.1:5000/display_details"></a>
+
+    <div class="wrapper">
+      {{ data[0] }}
+      {{ data[1] }}
+    </div>
+
+    <script>
+        function add_sessions(){
+            var fn = document.getElementById('FN');
+            var an = document.getElementById('AN');
+            document.getElementById('sum').innerHTML = Number(fn.value) + Number(an.value);
+        }
+    </script>
+
+</body>
+</html>

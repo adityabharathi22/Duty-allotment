@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>College Accounting</title>
+    <style>
+        body {
+            background-color: #f0f0f0;
+            font-family: Arial, sans-serif;
+        }
+        body:before{
+          content: 'Created by B. Aditya Bharathi';
+          position: fixed;
+          top: 20;
+          bottom: 0;
+          left: 3;
+          right: 0;
+
+          color: #001f3f;
+          font-size: 40px;
+          font-weight: 5000px;
+          display: grid;
+          justify-content: center;
+          align-content: center;
+          opacity: 0.6;
+        }
+        h1 {
+            text-align: center;
+            position: absolute;
+            top: 0;
+            left: 50%;
+            transform: translate(-50%, 0);
+        }
+
+        h2 {
+            text-align: center;
+            position: absolute;
+            top: 1;
+            left: 50%;
+            transform: translate(-50%, 0);
+        }
+
+        #sep {
+            background-color: #ffffff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0px 0px 10px #333333;
+            margin: 50px auto;
+            width: 50%;
+        }
+
+        #sep input[type="file"] {
+            padding: 10px;
+            border-radius: 5px;
+            border: none;
+            margin-bottom: 20px;
+        }
+
+        #sep input[type="submit"] {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 20px;
+            border-radius: 5px;
+            border: none;
+            cursor: pointer;
+        }
+
+        #sep input[type="submit"]:hover {
+            background-color: #3e8e41;
+        }
+
+        form {
+            background-color: #ffffff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0px 0px 10px #333333;
+            margin: 50px auto;
+            width: 50%;
+        }
+
+        form input[type="text"] {
+            padding: 10px;
+            border-radius: 5px;
+            border: none;
+            margin-bottom: 20px;
+        }
+
+        form input[type="submit"] {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 20px;
+            border-radius: 5px;
+            border: none;
+            cursor: pointer;
+        }
+
+        form input[type="submit"]:hover {
+            background-color: #3e8e41;
+        }
+
+        .logo {
+            position: absolute;
+            top: 0;
+            width: 130px;
+            height: 130px;
+          }
+
+        .left-logo {
+            left: 40;
+        }
+
+        .wrapper {
+          position: absolute;
+          top: 0;
+          right: 0;
+          padding: 20px;
+          background-color: rgba(255, 255, 255, 0.8);
+          border-radius: 0 0 10px 0;
+          box-shadow: -5px 5px 10px rgba(0, 0, 0, 0.2);
+          color: #333333;
+          font-weight: bold;
+          text-align: right;
+          z-index: 1;
+        }
+
+        #upload-form {
+          background-color: #ffffff;
+          padding: 20px;
+          border-radius: 10px;
+          box-shadow: 0px 0px 10px #333333;
+          margin: 50px auto;
+          width: 50%;
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+          flex-wrap: wrap;
+        }
+
+        #upload-form h5 {
+          margin: 0;
+        }
+
+        #upload-form select[name="files"] {
+          margin-right: 10px;
+        }
+
+        #upload-form input[type="file"] {
+          padding: 10px;
+          border-radius: 5px;
+          border: none;
+          margin-bottom: 20px;
+        }
+
+        #upload-form input[type="submit"] {
+          background-color: #4CAF50;
+          color: white;
+          padding: 10px 20px;
+          border-radius: 5px;
+          border: none;
+          cursor: pointer;
+        }
+
+        #upload-form input[type="submit"]:hover {
+          background-color: #3e8e41;
+        }
+
+        #upload-form2 {
+          background-color: #ffffff;
+          padding: 20px;
+          border-radius: 10px;
+          box-shadow: 0px 0px 10px #333333;
+          margin: 50px auto;
+          width: 50%;
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+          flex-wrap: wrap;
+        }
+
+        #upload-form2 input[type="submit"]:hover {
+          background-color: #3e8e41;
+        }
+    </style>
+
+</head>
+<body>
+    <h1>External Duty Allotment</h1><br><br>
+    <h2>Upload your csv file and enter the session count</h2><br>
+    <img src="https://images.shiksha.com/mediadata/images/1618803747phpaekAq1.jpeg" class="logo left-logo">
+
+    <form id="upload-form" method="POST" action="http://127.0.0.1:5000/ext_home">
+        <h5>Select a pre-existing file:</h5>
+        <select name="files">
+            {% for option in files %}
+            <option name="files" value="{{ option }}">{{ option }}</option>
+            {% endfor %}
+        </select>
+        <input type="submit" name="ex_file_sel" value="Submit"><br>
+        <h3>Selected file: {{ sel_file }}</h3>
+    </form>
+
+    <form id="upload-form2" method="POST" action="http://127.0.0.1:5000/ext_home" enctype = "multipart/form-data">
+
+        Or upload a new file: <input type="file" accept=".csv" name="file">
+            <input type="submit" value="submit" name="file_upload"><br><br><br>
+    </form>
+
+    <form id="sep" method="POST" action="http://127.0.0.1:5000/ext_home" enctype = "multipart/form-data">
+        <label>Enter number of staffs to be alloted in Forenoon(FN) and Afternoon(AN) session</label><br><br>
+
+        <div class="Exam_Dates">
+            <table>
+                <th> </th>
+                <th> _FN </th>
+                <th> _AN </th>
+                <th>_Total </th>
+
+                {% for row in date %}
+                <tr>
+                  <td>
+                      {{ row }}=> FN:<input type="number" name="FN_{{row}}" id='FN' min="0">
+                                AN:<input type="number" name="AN_{{row}}" id='AN' min="0">
+                  </td>
+
+                    <td>
+                        {{ db_dict[row][0] }}
+                    </td>
+
+                    <td>
+                        {{ db_dict[row][1] }}
+                    </td>
+
+                    <td>
+                        {{ db_dict[row][2] }}
+                    </td>
+
+                </tr>
+                {% endfor %}
+
+
+
+            </table>
+            <h3>Total duties: {{ total_duty }}</h3>
+            <input type="submit" value="confirm" name="confirm" style="float: right; margin-right: 10px;">
+        </div>
+
+        <input type="submit" value="Allot duty" name="allot_duty">
+    </form>
+
+
+    <div class="wrapper">
+      {{ data[0] }}
+      {{ data[1] }}
+    </div>
+
+
+
+</body>
+</html>

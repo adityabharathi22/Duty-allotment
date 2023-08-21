@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Date input</title>
+    <style type="text/css">
+        /* Style for the <body> tag */
+        body {
+          background-color: #F5F5F5;
+          font-family: Arial, sans-serif;
+        }
+        body:before{
+          content: 'Created by B. Aditya Bharathi';
+          position: fixed;
+          top: 20;
+          bottom: 0;
+          left: 3;
+          right: 0;
+          z-index: -1;
+
+          color: #001f3f;
+          font-size: 40px;
+          font-weight: 5000px;
+          display: grid;
+          justify-content: center;
+          align-content: center;
+          opacity: 0.5;
+        }
+
+        /* Style for the <h1> tag */
+        h1 {
+          color: #333;
+          text-align: center;
+          margin-top: 30px;
+        }
+
+        /* Style for the <form> tag */
+        form {
+          width: 400px;
+          margin: 0 auto;
+        }
+
+        /* Style for the <label> tag */
+        label {
+          display: block;
+          margin-top: 20px;
+          color: #333;
+        }
+
+        /* Style for the <input> tag */
+        input {
+          display: block;
+          width: 100%;
+          padding: 10px;
+          margin-top: 10px;
+          border: 1px solid #ccc;
+          border-radius: 4px;
+          transition: border-color 0.3s ease-in-out;
+        }
+
+        /* Style for the <input> tag on hover */
+        input:hover {
+          border-color: #66afe9;
+        }
+
+        /* Style for the <input> tag on focus */
+        input:focus {
+          outline: none;
+          border-color: #66afe9;
+          box-shadow: 0 0 5px #66afe9;
+        }
+
+        /* Style for the <input[type="submit"]> tag */
+        input[type="submit"] {
+          display: block;
+          width: 100%;
+          padding: 10px;
+          margin-top: 20px;
+          background-color: #337ab7;
+          color: #fff;
+          border: none;
+          border-radius: 4px;
+          transition: background-color 0.3s ease-in-out;
+        }
+
+        /* Style for the <input[type="submit"]> tag on hover */
+        input[type="submit"]:hover {
+          background-color: #286090;
+        }
+
+        /* Style for the <input[type="submit"]> tag on focus */
+        input[type="submit"]:focus {
+          outline: none;
+          box-shadow: none;
+        }
+
+    </style>
+</head>
+<body>
+    <br><br><br>
+    <form action="http://127.0.0.1:5000/sel_date_view_ext" method="GET">
+        <label for="start">Enter date:</label>
+        <input type="date" id="start" name="date">
+
+        <input type="submit" name="submit" value="Submit">
+    </form>
+
+</body>
+</html>

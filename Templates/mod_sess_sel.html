@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Slot Selection</title>
+    <style type="text/css">
+        /* Set body styles */
+        body {
+          font-family: Arial, sans-serif;
+          background-color: #f1f1f1;
+          margin: 0;
+        }
+        body:before{
+          content: 'Created by B. Aditya Bharathi';
+          position: fixed;
+          top: 20;
+          bottom: 0;
+          left: 3;
+          right: 0;
+          z-index: -1;
+
+          color: #001f3f;
+          font-size: 40px;
+          font-weight: 5000px;
+          display: grid;
+          justify-content: center;
+          align-content: center;
+          opacity: 0.5;
+        }
+
+        /* Set styles for form */
+        form {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          padding: 20px;
+          background-color: #fff;
+          box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.2);
+          border-radius: 5px;
+          margin: 20px auto;
+          width: 50%;
+        }
+
+        /* Set styles for heading */
+        h1 {
+          margin: 0 0 20px 0;
+          text-align: center;
+        }
+
+        /* Set styles for select element */
+        select {
+          padding: 10px;
+          margin-bottom: 20px;
+          width: 100%;
+          border-radius: 5px;
+          border: 1px solid #ccc;
+          background-color: #fff;
+          box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.2);
+          font-size: 16px;
+        }
+
+        /* Set styles for option elements */
+        option {
+          padding: 10px;
+        }
+
+        input[type="submit"] {
+          background-color: #4CAF50;
+          color: #fff;
+          padding: 12px 20px;
+          border: none;
+          border-radius: 4px;
+          cursor: pointer;
+          transition: background-color 0.3s;
+        }
+
+        /* Set styles for submit button */
+        a {
+          background-color: #4CAF50;
+          color: #fff;
+          padding: 10px 20px;
+          border-radius: 5px;
+          border: none;
+          cursor: pointer;
+          transition: background-color 0.3s ease;
+          text-decoration: none;
+        }
+
+        input[type="submit"]:hover {
+          background-color: #3e8e41;
+        }
+
+        /* Set styles for selected option paragraph */
+        p {
+          margin-top: 20px;
+          text-align: center;
+        }
+
+        /* Set styles for left-aligned iframe */
+        iframe {
+          display: block;
+          float: left;
+          width: 50%;
+          height: 500px;
+          border: none;
+          margin: 0 auto;
+        }
+                h2 {
+          position: absolute;
+          top: auto;
+          left: 50%;
+          transform: translate(-50%, -50%);
+        }
+
+        table {
+            margin: 0 auto;
+            border-collapse: collapse;
+            width: 80%;
+        }
+
+        td, th {
+            padding: 8px;
+            text-align: center;
+        }
+
+        tr:nth-child(even) {
+            background-color: #f2f2f2;
+        }
+
+        th {
+            background-color: #4CAF50;
+            color: white;
+        }
+
+        table:hover {
+            box-shadow: 0px 0px 10px #333333;
+        }
+
+        td:hover {
+            background-color: #f5f5f5;
+        }
+
+        tr:hover {
+            background-color: #dddddd;
+        }
+
+        table, th, td {
+            border: 1px solid black;
+            border-collapse: collapse;
+        }
+
+    </style>
+</head>
+<body>
+  <form action="http://127.0.0.1:5000/delete_session" method="GET">
+    <h1>Select an option:</h1>
+
+    <select name="options">
+        {% for option in data %}
+        <option name="slot" value="{{ option }}">{{ option }}</option>
+        {% endfor %}
+    </select>
+    <br>
+    <br>
+      <input type="submit" value="Submit" name="submit"><br>
+      <h3>You have selected: {{ op }}</h3>
+      <a href="http://127.0.0.1:5000/del_Sess_status">Delete {{ op }}</a>
+  </form>
+
+
+  <h2>Existing Slots:</h2><br><br><br><br><br><br>
+    <div class="existing_colleges">
+        <table>
+            <th>Slot</th>
+            <th>Start Date</th>
+            <th>End Date</th>
+            <th>Session</th>
+
+            {% for row in datas %}
+            <tr>
+                  {% for cell in row %}
+                  <td><b>{{ cell }}</b></td>
+                  {% endfor %}
+            </tr>
+            {% endfor %}
+        </table>
+    </div>
+</body>
+</html>

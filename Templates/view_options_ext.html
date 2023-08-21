@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style type="text/css">
+        body {
+          background-color: #f8f8f8;
+          font-family: Arial, sans-serif;
+          text-align: center;
+        }
+        body:before{
+          content: 'Created by B. Aditya Bharathi';
+          position: fixed;
+          top: 20;
+          bottom: 0;
+          left: 3;
+          right: 0;
+          z-index: -1;
+
+          color: #001f3f;
+          font-size: 40px;
+          font-weight: 5000px;
+          display: grid;
+          justify-content: center;
+          align-content: center;
+          opacity: 0.5;
+        }
+
+        form {
+          background-color: #ffffff;
+          padding: 20px;
+          border-radius: 10px;
+          box-shadow: 0px 0px 10px #333333;
+          margin: 50px auto;
+          width: 50%;
+        }
+
+        input[type="submit"] {
+          background-color: #4CAF50;
+          color: white;
+          padding: 20px 30px;
+          border-radius: 5px;
+          border: none;
+          cursor: pointer;
+          margin-top: 20px;
+          font-size: 18px;
+          transition: all 0.3s ease-in-out;
+        }
+
+        input[type="submit"]:hover {
+          background-color: #3e8e41;
+        }
+
+        a.button {
+          display: inline-block;
+          background-color: #555;
+          color: #fff;
+          padding: 20px 30px;
+          border-radius: 5px;
+          text-decoration: none;
+          font-size: 18px;
+          transition: all 0.3s ease-in-out;
+        }
+
+        a.button:hover {
+          background-color: #333;
+        }
+
+        .wrapper {
+          position: absolute;
+          top: 0;
+          right: 0;
+          padding: 20px;
+          background-color: rgba(255, 255, 255, 0.8);
+          border-radius: 0 0 10px 0;
+          box-shadow: -5px 5px 10px rgba(0, 0, 0, 0.2);
+          color: #333333;
+          font-weight: bold;
+          text-align: right;
+          z-index: 1;
+        }
+
+    </style>
+</head>
+<body>
+    <br><br>
+    <form action="http://127.0.0.1:5000/view_options_ext" method="GET">
+        <input type="submit" value="Click here to view duty alloted by specific Dates" name="op_dates" class="inp"><br><br><br>
+        <input type="submit" value="Click here to view duty alloted in specfic session" name="op_sess" class="inp"><br><br><br>
+
+    </form>
+
+
+    <a href="http://127.0.0.1:5000/ext_duty" class="button">Home Page</a>
+
+    <div class="wrapper">
+      College Selected: {{ clg }}
+    </div>
+
+</body>
+</html>

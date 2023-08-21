@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Embed</title>
+  </head>
+  <body>
+  <table>
+    <tr>
+      <th>Slot   </th>
+      <th>Start Date</th>
+      <th>End Date</th>
+      <th>Session</th>
+    </tr>
+    {% for row in data %}
+    <tr>
+      {% for cell in row %}
+      <td>{{ cell }}</td>
+      {% endfor %}
+    </tr>
+    {% endfor %}
+
+  </table>
+
+  </body>
+</html>

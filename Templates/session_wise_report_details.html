@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Staff Details</title>
+    <style>
+
+        .center {
+          text-align: center;
+        }
+        /* Set font styles for the whole page */
+        body {
+          font-family: Arial, sans-serif;
+          font-size: 16px;
+          line-height: 1.5;
+        }
+
+        /* Style the table headers */
+        th {
+          background-color: #f2f2f2;
+          font-weight: bold;
+          padding: 10px;
+          text-align: left;
+        }
+
+        /* Style the table cells */
+        td {
+          border: 1px solid #ddd;
+          padding: 10px;
+        }
+
+        /* Add hover effect to table rows */
+        tr:hover {
+          background-color: #f5f5f5;
+        }
+
+
+
+        /* Style the page heading */
+        h1 {
+          text-align: center;
+          font-size: 36px;
+          font-weight: bold;
+          margin-bottom: 30px;
+          text-transform: uppercase;
+          letter-spacing: 2px;
+          color: #333;
+        }
+
+        .wrapper {
+          position: absolute;
+          top: 0;
+          right: 0;
+          padding: 20px;
+          background-color: rgba(255, 255, 255, 0.8);
+          border-radius: 0 0 10px 0;
+          box-shadow: -5px 5px 10px rgba(0, 0, 0, 0.2);
+          color: #333333;
+          font-weight: bold;
+          text-align: right;
+          z-index: 1;
+        }
+
+        div.fixed {
+          position: fixed;
+          bottom: 0;
+          right: 0;
+          width: 300px;
+
+        }
+
+        div.signature {
+            position: fixed;
+            bottom:50;
+            right: 0;
+            width: 10px;
+        }
+
+        a {
+        font-family: Arial, sans-serif;
+        font-size: 16px;
+        color: #333;
+        text-decoration: none;
+        border-bottom: 2px solid transparent;
+        transition: border-color 0.2s ease-in-out;
+        }
+
+          a:hover {
+            border-bottom: 2px solid #333;
+          }
+
+          a:focus {
+            outline: none;
+          }
+
+          a[target="_blank"] {
+            margin-right: 50px;
+            padding: 10px 20px;
+            border-radius: 5px;
+            background-color: #333;
+            color: #fff;
+            transition: background-color 0.2s ease-in-out;
+          }
+
+          a[target="_blank"]:hover {
+            background-color: #555;
+          }
+
+      h1 {
+        text-align: center;
+        font-size: 26px;
+        font-family: Arial, sans-serif;
+        color: #182B54;
+        margin-bottom: 0;
+      }
+
+
+      .logo {
+        position: absolute;
+        top: 0;
+        width: 130px;
+        height: 130px;
+      }
+
+      .left-logo {
+        left: 40;
+      }
+
+      .right-logo {
+        right: 10;
+      }
+
+      h2 {color:black;
+        font-size: small;
+        margin-top:-25px;
+        float: right;
+        margin-left: 100px;
+        margin-right: 50px;
+      }
+
+
+
+      h5 {color: #182B54;
+        text-align: center;
+         margin-top:-2px;
+         margin-bottom: 0;
+      }
+
+      h5.h52 {color: #182B54;
+        text-align: center;
+        margin-bottom: 0;
+      }
+
+      h3 {color: #182B54;
+        text-align: center;
+         margin-bottom: 0;
+         margin-top:-2px;
+      }
+
+      h4.h32 {color: #2D4065;
+        text-align: center;
+        margin-bottom: 0;
+        margin-top:-2px;
+      }
+
+
+
+      * {
+          box-sizing: border-box;
+        }
+
+        .row {
+          margin-left:-5px;
+          margin-right:-5px;
+        }
+
+        .column {
+          float: left;
+          width: 50%;
+          padding: 5px;
+        }
+
+        /* Clearfix (clear floats) */
+        .row::after {
+          content: "";
+          clear: both;
+          display: table;
+        }
+
+        table {
+          border-collapse: collapse;
+          border-spacing: 0;
+          width: 100%;
+          border: 1px solid #ddd;
+        }
+
+        th, td {
+          text-align: left;
+          padding: 16px;
+        }
+
+        tr:nth-child(even) {
+          background-color: #f2f2f2;
+        }
+
+        div.left_al{
+            position: absolute;
+            left: -80px;
+
+        }
+        div.right_al{
+            position: absolute;
+            right: 10px;
+
+        }
+
+    </style>
+</head>
+<body>
+    {% for i in range(rep) %}
+
+        {% set curr = lst[i] %}
+        {% set d1 = curr[0] %}
+        {% set d2 = curr[1] %}
+        {% set name = curr[2] %}
+        {% set dept = curr[3] %}
+        {% set date = curr[4] %}
+        {% set session = curr[5] %}
+
+
+        <h1><b>SRM VALLIAMMAI ENGINEERING COLLEGE</b></h1>
+        <h3><b>(An Autonomous Institution)</b></h3>
+
+        <h5>SRM Nagar, Kattankulathur - 603 203</h5>
+
+        <h3>End-Semester Theory Examinations - {{ session }}</h3>
+
+        <h4 class="h32">Internal Invigilation Allotment</h4><br><br>
+
+        <div class="left_al">
+            <h2>Name: {{ name }}</h2><br>
+            <h2>Department: {{ dept }}</h2>
+        </div>
+
+        <div class="right_al">
+            <h2>Date: {{ date }}</h2>
+        </div>
+        <br>
+
+
+        <div class="row">
+            <div class="column">
+                <table>
+                    <th>S.no</th>
+                    <th>Date</th>
+                    <th>Session</th>
+
+                    <tr>
+                    {% for key, value in d1.items() %}
+                        <tr>
+                        <td><b>{{ key }}</b></td>
+                        {% for val2 in value %}
+                            <td><b>{{ val2 }} </b></td>
+                        {% endfor %}
+                        </tr>
+                    {% endfor %}
+                    </tr>
+
+                </table>
+
+            </div>
+
+            <div class="column">
+                <table>
+                    <th>S.no</th>
+                    <th>Date</th>
+                    <th>Session</th>
+
+                    <tr>
+                    {% for key, value in d2.items() %}
+                        <tr>
+                        <td><b>{{ key }}</b></td>
+                        {% for val2 in value %}
+                            <td><b>{{ val2 }} </b></td>
+                        {% endfor %}
+                        </tr>
+                    {% endfor %}
+                    </tr>
+
+                </table>
+            </div>
+
+        </div>
+
+            <div class="space">
+                <br><br><br>
+            </div>
+
+        <div class="Signatures">
+            <h2>COE/ SRMVEC</h2>
+        </div>
+
+            <div class="center">
+                <h5>----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------</h5>
+            </div>
+
+
+        <h1><b>SRM VALLIAMMAI ENGINEERING COLLEGE</b></h1>
+        <h3><b>(An Autonomous Institution)</b></h3>
+
+        <h5>SRM Nagar, Kattankulathur - 603 203</h5>
+
+        <h3>End-Semester Theory Examinations - {{ session }}</h3>
+
+        <h4 class="h32">Internal Invigilation Allotment</h4><br><br>
+
+        <div class="left_al">
+            <h2>Name: {{ name }}</h2><br>
+            <h2>Department: {{ dept }}</h2>
+        </div>
+
+        <div class="right_al">
+            <h2>Date: {{ date }}</h2>
+        </div>
+        <br>
+
+        <div class="row">
+            <div class="column">
+                <table>
+                    <th>S.no</th>
+                    <th>Date</th>
+                    <th>Session</th>
+
+                    <tr>
+                    {% for key, value in d1.items() %}
+                        <tr>
+                        <td><b>{{ key }}</b></td>
+                        {% for val2 in value %}
+                            <td><b>{{ val2 }} </b></td>
+                        {% endfor %}
+                        </tr>
+                    {% endfor %}
+                    </tr>
+
+                </table>
+
+            </div>
+
+            <div class="column">
+                <table>
+                    <th>S.no</th>
+                    <th>Date</th>
+                    <th>Session</th>
+
+                    <tr>
+                    {% for key, value in d2.items() %}
+                        <tr>
+                        <td><b>{{ key }}</b></td>
+                        {% for val2 in value %}
+                            <td><b>{{ val2 }} </b></td>
+                        {% endfor %}
+                        </tr>
+                    {% endfor %}
+                    </tr>
+
+                </table>
+            </div>
+
+        </div>
+
+            <div class="space">
+                <br><br><br>
+            </div>
+
+        <div class="Signatures">
+            <h2>SIGNATURE OF STAFF</h2>
+        </div>
+
+            <div class="center">
+                <h5>----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------</h5>
+            </div>
+
+    {% endfor %}
+
+    <div class="fixed">
+        <a href="http://127.0.0.1:5000/report_pdf_staff_sess" target="_blank" style="float: bottom; margin-left: auto;">Click to view as pdf and print</a>
+    </div>
+
+
+</body>
+</html>

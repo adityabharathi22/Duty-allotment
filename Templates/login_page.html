@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Login</title>
+    <style>
+        /* CSS code for login page */
+
+        body {
+          background-color: #f5f5f5;
+          font-family: Arial, sans-serif;
+        }
+
+        body:before{
+          content: 'Created by B. Aditya Bharathi';
+          position: fixed;
+          top: 20;
+          bottom: 0;
+          left: 9;
+          right: 0;
+          z-index: -1;
+
+          color: #001f3f;
+          font-size: 40px;
+          font-weight: 5000px;
+          display: grid;
+          justify-content: center;
+          align-content: center;
+          opacity: 0.5;
+        }
+
+        h1 {
+          text-align: center;
+          font-size: 36px;
+          margin-top: 50px;
+        }
+
+        form {
+          width: 400px;
+          margin: 0 auto;
+          background-color: #fff;
+          padding: 40px;
+          border-radius: 10px;
+          box-shadow: 0px 0px 10px rgba(0,0,0,0.3);
+        }
+
+        label {
+          display: block;
+          margin-bottom: 10px;
+          font-size: 18px;
+          font-weight: bold;
+          color: #333;
+        }
+
+        select, input[type="password"] {
+          display: block;
+          width: 100%;
+          padding: 10px;
+          border-radius: 5px;
+          border: 1px solid #ccc;
+          margin-bottom: 20px;
+        }
+
+        input[type="submit"] {
+          background-color: #4CAF50;
+          color: #fff;
+          padding: 10px 20px;
+          border: none;
+          border-radius: 5px;
+          cursor: pointer;
+          transition: background-color 0.3s;
+        }
+
+        input[type="submit"]:hover {
+          background-color: #3e8e41;
+        }
+
+        input[name="change"] {
+          background-color: #ddd;
+          color: #333;
+          padding: 8px 16px;
+          border: none;
+          border-radius: 5px;
+          cursor: pointer;
+          transition: background-color 0.3s;
+          margin-right: 10px;
+        }
+
+        input[name="change"]:hover {
+          background-color: #ccc;
+        }
+
+        .logo {
+          position: absolute;
+          top: 10px;
+          width: 130px;
+          height: 130px;
+        }
+
+        .left-logo {
+          left: 10px;
+        }
+
+        .right-logo {
+          right: 10px;
+        }
+
+
+
+    </style>
+</head>
+<body>
+    <img src="https://images.shiksha.com/mediadata/images/1618803747phpaekAq1.jpeg" class="logo left-logo">
+    <img src="https://erpsrm.com/srmhonline/resources/Image/SRMgrouplogo.png" class="logo right-logo">
+    <h1><b>SRM VALLIAMMAI ENGINEERING COLLEGE</b></h1>
+    <h1>Controller of Examinations</h1>
+  <form action="http://127.0.0.1:5000/" method="GET">
+    <label for="username">Select username:</label>
+      <select name="user" id="username">
+          <option value="Admin">Admin</option>
+          <option value="Duty Superintend">Duty Superintend</option>
+          <option value="Duty Allotment Staff">Duty Allotment Staff</option>
+      </select>
+
+      Password: <input type="password" name="password">
+      <input type="submit" name="Submit" value="Submit">
+      <input type='submit' name="change" value="Reset Password">
+
+  </form>
+
+    <h3>{{ pass_incrt }}</h3>
+</body>
+</html>

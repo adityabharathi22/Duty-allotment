@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>View Options</title>
+    <style>
+
+        /* Style for the <body> tag */
+        body {
+          background-color: #F5F5F5;
+          font-family: Arial, sans-serif;
+        }
+        body:before{
+          content: 'Created by B. Aditya Bharathi';
+          position: fixed;
+          top: 20;
+          bottom: 0;
+          left: 3;
+          right: 0;
+          z-index: -1;
+
+          color: #001f3f;
+          font-size: 40px;
+          font-weight: 5000px;
+          display: grid;
+          justify-content: center;
+          align-content: center;
+          opacity: 0.5;
+        }
+
+        /* Style for the <input> tag on hover */
+        input:hover {
+          border-color: #66afe9;
+        }
+
+        /* Style for the <input> tag on focus */
+        input:focus {
+          outline: none;
+          border-color: #66afe9;
+          box-shadow: 0 0 5px #66afe9;
+        }
+
+        /* Style for the <input> tag */
+        input {
+          display: block;
+          width: 100%;
+          padding: 10px;
+          margin-top: 10px;
+          border: 1px solid #ccc;
+          border-radius: 4px;
+          transition: border-color 0.3s ease-in-out;
+        }
+    </style>
+</head>
+<body>
+    <form action="http://127.0.0.1:5000/sess_view">
+
+        Enter Session: <input type="text" name="session">
+    </form>
+</body>
+</html>

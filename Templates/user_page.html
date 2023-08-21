@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>{{ data_wrap[0] }} Duty type</title>
+    <style>
+      /* CSS code for the username and date at the top of the page */
+      .header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 20px;
+        background-color: #f2f2f2;
+      }
+
+      /* CSS code for the buttons in the middle of the page */
+      .buttons {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 50vh;
+      }
+
+      /* CSS code for the Internal Duty button */
+      .internal-duty {
+        padding: 10px 20px;
+        background-color: #4CAF50;
+        color: white;
+        border: none;
+        border-radius: 5px;
+        font-size: 20px;
+        margin-right: 20px;
+        cursor: pointer;
+        transition: background-color 0.3s;
+      }
+
+      .internal-duty:hover {
+        background-color: #3e8e41;
+      }
+
+      /* CSS code for the External Duty button */
+      .external-duty {
+        padding: 10px 20px;
+        background-color: #008CBA;
+        color: white;
+        border: none;
+        border-radius: 5px;
+        font-size: 20px;
+        cursor: pointer;
+        transition: background-color 0.3s;
+      }
+
+      .external-duty:hover {
+        background-color: #006d85;
+      }
+
+      .logo {
+          position: absolute;
+          top: 10px;
+          width: 130px;
+          height: 130px;
+        }
+
+        .left-logo {
+          left: 10px;
+        }
+
+        .right-logo {
+          right: 10px;
+        }
+
+        h1 {
+        text-align: center;
+        font-size: 26px;
+        font-family: Arial, sans-serif;
+        color: #182B54;
+        margin-bottom: 0;
+      }
+      body:before{
+          content: 'Created by B. Aditya Bharathi';
+          position: fixed;
+          top: 20;
+          bottom: 0;
+          left: 9;
+          right: 0;
+          z-index: -1;
+
+          color: #001f3f;
+          font-size: 40px;
+          font-weight: 5000px;
+          display: grid;
+          justify-content: center;
+          align-content: center;
+          opacity: 0.5;
+      }
+    </style>
+  </head>
+  <body>
+
+    <img src="https://images.shiksha.com/mediadata/images/1618803747phpaekAq1.jpeg" class="logo left-logo">
+    <img src="https://erpsrm.com/srmhonline/resources/Image/SRMgrouplogo.png" class="logo right-logo">
+    <h1><b>SRM VALLIAMMAI ENGINEERING COLLEGE</b></h1><br><br><br><br><br><br>
+
+    <div class="header">
+      <div class="username">Username: {{ data_wrap[0] }}</div>
+      <div class="date">Today's Date: {{ data_wrap[1] }}</div>
+    </div>
+    <div class="buttons">
+      <button class="internal-duty" onclick="redirectToID()">Internal Duty</button>
+      <button class="external-duty" onclick="redirectToED()">External Duty</button>
+    </div>
+
+  <script>
+    function redirectToID(){
+      window.location.href = "http://127.0.0.1:5000/main_page";
+    }
+
+    function redirectToED(){
+      window.location.href = "http://127.0.0.1:5000/ext_duty";
+    }
+  </script>
+  </body>
+</html>

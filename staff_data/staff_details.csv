@@ -1,0 +1,61 @@
+S.no,StaffID,Name,Designation,Department,Mobile Number,Email-ID
+1,123001,John Doe,Professor,AI&DS,9876543210,johndoe@example.com
+2,123002,Jane Smith,Associate Professor,AI&DS,9876543211,janesmith@example.com
+3,123003,David Johnson,A.P.(Sel.G),AI&DS,9876543212,davidjohnson@example.com
+4,123004,Sarah Wilson,A.P.(Sr.G),AI&DS,9876543213,sarahwilson@example.com
+5,123005,Michael Brown,A.P.(O.G),AI&DS,9876543214,michaelbrown@example.com
+6,123006,Emily Davis,Professor,IT,9876543215,emilydavis@example.com
+7,123007,Christopher Miller,Associate Professor,IT,9876543216,christophermiller@example.com
+8,123008,Amanda Taylor,A.P.(Sel.G),IT,9876543217,amandataylor@example.com
+9,123009,Andrew Anderson,A.P.(Sr.G),IT,9876543218,andrewanderson@example.com
+10,123010,Laura Wilson,A.P.(O.G),IT,9876543219,laurawilson@example.com
+11,123011,Brian Jackson,Professor,CSE,9876543220,brianjackson@example.com
+12,123012,Jessica Davis,Associate Professor,CSE,9876543221,jessicadavis@example.com
+13,123013,Matthew Wilson,A.P.(Sel.G),CSE,9876543222,matthewwilson@example.com
+14,123014,Sophia Martinez,A.P.(Sr.G),CSE,9876543223,sophiamartinez@example.com
+15,123015,Joshua Johnson,A.P.(O.G),CSE,9876543224,joshuajohnson@example.com
+16,123016,Olivia Thompson,Professor,CIVIL,9876543225,oliviathompson@example.com
+17,123017,James Davis,Associate Professor,CIVIL,9876543226,jamesdavis@example.com
+18,123018,Emily Rodriguez,A.P.(Sel.G),CIVIL,9876543227,emilyrodriguez@example.com
+19,123019,Daniel Moore,A.P.(Sr.G),CIVIL,9876543228,danielmoore@example.com
+20,123020,Elizabeth White,A.P.(O.G),CIVIL,9876543229,elizabethwhite@example.com
+21,123021,David Wilson,Professor,ECE,9876543230,davidwilson@example.com
+22,123022,Samantha Thompson,Associate Professor,ECE,9876543231,samanthathompson@example.com
+23,123023,Joseph Garcia,A.P.(Sel.G),ECE,9876543232,josephgarcia@example.com
+24,123024,Natalie Smith,A.P.(Sr.G),ECE,9876543233,nataliesmith@example.com
+25,123025,Alexander Davis,A.P.(O.G),ECE,9876543234,alexanderdavis@example.com
+26,123026,Isabella Brown,Professor,EIE,9876543235,isabellabrown@example.com
+27,123027,Samuel Johnson,Associate Professor,EIE,9876543236,samueljohnson@example.com
+28,123028,Ava Taylor,A.P.(Sel.G),EIE,98765432312,avataylor@example.com
+29,123029,Ethan Anderson,A.P.(Sr.G),EIE,9876543237,ethananderson@example.com
+30,123030,Charlotte Wilson,A.P.(O.G),EIE,9876543238,charlottewilson@example.com
+31,123031,William Martinez,Professor,EEE,9876543239,williammartinez@example.com
+32,123032,Avery Moore,Associate Professor,EEE,9876543240,averymoore@example.com
+33,123033,Sofia Thompson,A.P.(Sel.G),EEE,9876543241,sofiathompson@example.com
+34,123034,Benjamin Johnson,A.P.(Sr.G),EEE,9876543242,benjaminjohnson@example.com
+35,123035,Mia Davis,A.P.(O.G),EEE,9876543243,miadavis@example.com
+36,123036,Jack Rodriguez,Professor,MDE,9876543244,jackrodriguez@example.com
+37,123037,Liam Garcia,Associate Professor,MDE,9876543245,liamgarcia@example.com
+38,123038,Grace Smith,A.P.(Sel.G),MDE,9876543246,gracesmith@example.com
+39,123039,Michael Anderson,A.P.(Sr.G),MDE,9876543247,michaelanderson@example.com
+40,123040,Sophia Johnson,A.P.(O.G),MDE,9876543248,sophiajohnson@example.com
+41,123041,Logan Wilson,Professor,AGRI,9876543249,loganwilson@example.com
+42,123042,Chloe Thompson,Associate Professor,AGRI,9876543250,chloethompson@example.com
+43,123043,Grayson Davis,A.P.(Sel.G),AGRI,9876543251,graysondavis@example.com
+44,123044,Audrey Brown,A.P.(Sr.G),AGRI,9876543252,audreybrown@example.com
+45,123045,Carter Johnson,A.P.(O.G),AGRI,9876543253,carterjohnson@example.com
+46,123046,Riley Martinez,Professor,MECH,9876543254,rileymartinez@example.com
+47,123047,Luke Garcia,Associate Professor,MECH,9876543255,lukegarcia@example.com
+48,123048,Ariana Smith,A.P.(Sel.G),MECH,9876543256,arianasmith@example.com
+49,123049,Owen Anderson,A.P.(Sr.G),MECH,9876543257,owenanderson@example.com
+50,123050,Scarlett Johnson,A.P.(O.G),MECH,9876543258,scarlettjohnson@example.com
+51,123051,Sebastian Wilson,Professor,CYS,9876543259,sebastianwilson@example.com
+52,123052,Zoey Thompson,Associate Professor,CYS,9876543260,zoeythompson@example.com
+53,123053,Lincoln Davis,A.P.(Sel.G),CYS,9876543261,lincolndavis@example.com
+54,123054,Penelope Brown,A.P.(Sr.G),CYS,9876543262,penelopebrown@example.com
+55,123055,Henry Johnson,A.P.(O.G),CYS,9876543263,henryjohnson@example.com
+56,123056,Stella Garcia,Professor,AI&DS,987654,stellagracis@example.com
+57,123057,Landon Smith,Associate Professor,AI&DS,9876543264,landonsmith@example.com
+58,123058,Victoria Anderson,A.P.(Sel.G),AI&DS,9876543265,victoriaanderson@example.com
+59,123059,Elijah Johnson,A.P.(Sr.G),AI&DS,9876543266,elijahjohnson@example.com
+60,123060,Nora Wilson,A.P.(O.G),AI&DS,9876543267,norawilson@example.com
